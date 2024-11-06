@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+  "name": "Go",
+  "image": "mcr.microsoft.com/devcontainers/go:1.23-bookworm",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.23"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "make build",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        // tools
+        "ms-vscode.makefile-tools",
+        "dzhavat.bracket-pair-toggler",
+        "mhutchie.git-graph",
+        "bruno-api-client.bruno",
+        // themes
+        "miguelsolorio.fluent-icons",
+        "miguelsolorio.symbols"
+      ],
+      "settings": {
+        "workbench.iconTheme": "symbols",
+        "workbench.productIconTheme": "fluent-icons",
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
